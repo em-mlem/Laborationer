@@ -1,5 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Yatzy_lab
 {
@@ -8,12 +10,13 @@ namespace Yatzy_lab
     /// </summary>
     public partial class MainWindow : Window
     {
+        int rollsLeft = 3;
+        Random rnd = new Random();
+
         public MainWindow()
         {
             InitializeComponent();
-            // "⚀⚁⚂⚃⚄⚅"
         }
-
 
         private void OnOkClick(object sender, RoutedEventArgs e)
         {
@@ -28,7 +31,7 @@ namespace Yatzy_lab
             sum = ones + twos + threes + fours + fives + sixes;
             if (sum > 62)
             {txtBonus.Text = "50";
-             sum = ones + twos + threes + fours + fives + sixes + 50;
+             sum = ones + twos + threes + fours + fives + sixes + bonus;
                 txtTotal.Text = sum.ToString();
                 sum = Convert.ToInt32(txtTotal.Text);
             }
@@ -40,24 +43,95 @@ namespace Yatzy_lab
 
         private void OnClearClick(object sender, RoutedEventArgs e)
         {
-            
+            diceOne.Text = "";
+            diceTwo.Text = "";
+            diceThree.Text = "";
+            diceFour.Text = "";
+            diceFive.Text = "";
+
+            chkDiceOne.IsChecked = false;
+            chkDiceTwo.IsChecked = false;
+            chkDiceThree.IsChecked = false;
+            chkDiceFour.IsChecked = false;
+            chkDiceFive.IsChecked = false;
+
+            rollsLeft = 3;
+            txtRollsLeft.Text = "Kast kvar: " + rollsLeft;
+            btnRoll.IsEnabled = true;
 
         }
 
         private void OnRollClick(object sender, RoutedEventArgs e)
         {
             Random rnd = new Random();
-            int dice1 = rnd.Next(1, 7);
-            int dice2 = rnd.Next(1, 7);
-            int dice3 = rnd.Next(1, 7);
-            int dice4 = rnd.Next(1, 7);
-            int dice5 = rnd.Next(1, 7);
-            diceOne.Text = dice1.ToString();
-            diceTwo.Text = dice2.ToString();
-            diceThree.Text = dice3.ToString();
-            diceFour.Text = dice4.ToString();
-            diceFive.Text = dice5.ToString();
+            int dice1, dice2, dice3, dice4, dice5;
 
+            if (rollsLeft > 0)
+            {
+                rollsLeft--;
+                txtRollsLeft.Text = rollsLeft.ToString();
+                txtRollsLeft.Text = "Kast kvar: " + rollsLeft;
+            }
+
+            if (rollsLeft <= 0)
+            {
+                btnRoll.IsEnabled = false;
+            }
+
+            if (chkDiceOne.IsChecked == false)
+            {
+                dice1 = rnd.Next(1, 7);
+                diceOne.Text = dice1.ToString();
+            }
+            else
+            {
+                if (int.TryParse(diceOne.Text, out int oldValue))
+                    dice1 = oldValue;
+            }
+            
+            if (chkDiceTwo.IsChecked == false)
+            {
+                dice2 = rnd.Next(1, 7);
+                diceTwo.Text = dice2.ToString();
+            }
+            else
+            {
+                if (int.TryParse(diceTwo.Text, out int oldValue))
+                    dice2 = oldValue;
+            }
+
+            if (chkDiceThree.IsChecked == false)
+            {
+                dice3 = rnd.Next(1, 7);
+                diceThree.Text = dice3.ToString();
+            }
+            else
+            {
+                if (int.TryParse(diceThree.Text, out int oldValue))
+                    dice3 = oldValue;
+            }
+
+            if (chkDiceFour.IsChecked == false)
+            {
+                dice4 = rnd.Next(1, 7);
+                diceFour.Text = dice4.ToString();
+            }
+            else
+            {
+                if (int.TryParse(diceFour.Text, out int oldValue))
+                    dice4 = oldValue;
+            }
+
+            if (chkDiceFive.IsChecked == false)
+            {
+                dice5 = rnd.Next(1, 7);
+                diceFive.Text = dice5.ToString();
+            }
+            else
+            {
+                if (int.TryParse(diceFive.Text, out int oldValue))
+                    dice5 = oldValue;
+            }
         }
 
         private void OnOnesClick(object sender, RoutedEventArgs e)

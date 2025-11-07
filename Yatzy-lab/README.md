@@ -15,7 +15,7 @@ Bonusregeln gäller de sex översta fälten: *Ettor–Sexor*.
 ---
 
 
-## Del 2 – Få tärningarna att fungera (DU ÄR HÄR)
+## Del 2 – Få tärningarna att fungera (CHECK)
 När användaren klickar på **Kasta tärningar** ska fem tärningar få nya värden mellan 1 och 6.  
 
 ### Krav
@@ -29,7 +29,7 @@ När användaren klickar på **Kasta tärningar** ska fem tärningar få nya vä
 -
 ---
 
-## Del 3 – Poängknappar (Ettor–Sexor)
+## Del 3 – Poängknappar (Ettor–Sexor) (CHECK)
 Klick på exempelvis **Ettor** ska räkna poängen utifrån de fem tärningarna.  
 
 ### Krav
@@ -44,7 +44,7 @@ Klick på exempelvis **Ettor** ska räkna poängen utifrån de fem tärningarna.
 
 ---
 
-## Del 4 – Spara tärningar och räkna kast
+## Del 4 – Spara tärningar och räkna kast (CHECK)
 Användaren ska kunna välja att **spara tärningar** och ha högst **3 kast** per runda.  
 
 ### Krav

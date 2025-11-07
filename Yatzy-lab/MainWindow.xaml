@@ -262,7 +262,7 @@
                         Height="40"
                         Margin="0,0,8,0"
                         Click="OnRollClick"
-                        Content="Kasta tärningar" />
+                        Content="Kasta tärningar" IsEnabled="True" />
                     <TextBlock
                         x:Name="txtRollsLeft"
                         VerticalAlignment="Center"
@@ -291,7 +291,7 @@
                             x:Name="chkDiceOne"
                             Margin="0,6,0,0"
                             HorizontalAlignment="Center"
-                            Content="Spara" />
+                            Content="Spara" IsChecked="False" />
                     </StackPanel>
 
                     <!--  Die 2  -->
@@ -315,7 +315,7 @@
                             x:Name="chkDiceTwo"
                             Margin="0,6,0,0"
                             HorizontalAlignment="Center"
-                            Content="Spara" />
+                            Content="Spara" IsChecked="False" />
                     </StackPanel>
 
                     <!--  Die 3  -->
@@ -339,7 +339,7 @@
                             x:Name="chkDiceThree"
                             Margin="0,6,0,0"
                             HorizontalAlignment="Center"
-                            Content="Spara" />
+                            Content="Spara" IsChecked="False" />
                     </StackPanel>
 
                     <!--  Die 4  -->
@@ -363,7 +363,7 @@
                             x:Name="chkDiceFour"
                             Margin="0,6,0,0"
                             HorizontalAlignment="Center"
-                            Content="Spara" />
+                            Content="Spara" IsChecked="False" />
                     </StackPanel>
 
                     <!--  Die 5  -->
@@ -387,7 +387,7 @@
                             x:Name="chkDiceFive"
                             Margin="0,6,0,0"
                             HorizontalAlignment="Center"
-                            Content="Spara" />
+                            Content="Spara" IsChecked="False" />
                     </StackPanel>
                 </UniformGrid>
             </DockPanel>
