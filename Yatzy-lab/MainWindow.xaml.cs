@@ -46,12 +46,18 @@ namespace Yatzy_lab
 
         private void OnRollClick(object sender, RoutedEventArgs e)
         {
-            string[] dice = { "1", "2", "3", "4", "5", "6" };
-            diceOne.Text = (dice[0]);
-            diceTwo.Text = (dice[0]);
-            diceThree.Text = (dice[0]);
-            diceFour.Text = (dice[0]);
-            diceFive.Text = (dice[0]);
+            Random rnd = new Random();
+            int dice1 = rnd.Next(1, 7);
+            int dice2 = rnd.Next(1, 7);
+            int dice3 = rnd.Next(1, 7);
+            int dice4 = rnd.Next(1, 7);
+            int dice5 = rnd.Next(1, 7);
+            diceOne.Text = dice1.ToString();
+            diceTwo.Text = dice2.ToString();
+            diceThree.Text = dice3.ToString();
+            diceFour.Text = dice4.ToString();
+            diceFive.Text = dice5.ToString();
+
         }
 
         private void OnOnesClick(object sender, RoutedEventArgs e)
