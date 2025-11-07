@@ -62,32 +62,87 @@ namespace Yatzy_lab
 
         private void OnOnesClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ettor klickade");
+            int[] dice = { Int32.Parse(diceOne.Text), Int32.Parse(diceTwo.Text), Int32.Parse(diceThree.Text), Int32.Parse(diceFour.Text), Int32.Parse(diceFive.Text) };
+            int ones = 0;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                if (dice[i] == 1)
+                {
+                    ones += 1;
+                }
+            }
+            txtOnes.Text = ones.ToString();
+
         }
 
         private void OnTwosClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Tvåor klickade");
+            int[] dice = { Int32.Parse(diceOne.Text), Int32.Parse(diceTwo.Text), Int32.Parse(diceThree.Text), Int32.Parse(diceFour.Text), Int32.Parse(diceFive.Text) };
+            int twos = 0;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                if (dice[i] == 2)
+                {
+                    twos += 2;
+                }
+            }
+            txtTwos.Text = twos.ToString();
         }
 
         private void OnThreesClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Treor klickade");
+            int[] dice = { Int32.Parse(diceOne.Text), Int32.Parse(diceTwo.Text), Int32.Parse(diceThree.Text), Int32.Parse(diceFour.Text), Int32.Parse(diceFive.Text) };
+            int threes = 0;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                if (dice[i] == 3)
+                {
+                    threes += 3;
+                }
+            }
+            txtThrees.Text = threes.ToString();
         }
 
         private void OnFoursClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Fyror klickade");
+            int[] dice = { Int32.Parse(diceOne.Text), Int32.Parse(diceTwo.Text), Int32.Parse(diceThree.Text), Int32.Parse(diceFour.Text), Int32.Parse(diceFive.Text) };
+            int fours = 0;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                if (dice[i] == 4)
+                {
+                    fours += 4;
+                }
+            }
+            txtFours.Text = fours.ToString();
         }
 
         private void OnFivesClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Femmor klickade");
+            int[] dice = { Int32.Parse(diceOne.Text), Int32.Parse(diceTwo.Text), Int32.Parse(diceThree.Text), Int32.Parse(diceFour.Text), Int32.Parse(diceFive.Text) };
+            int fives = 0;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                if (dice[i] == 5)
+                {
+                    fives += 5;
+                }
+            }
+            txtFives.Text = fives.ToString();
         }
 
         private void OnSixesClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Sexor klickade");
+            int[] dice = { Int32.Parse(diceOne.Text), Int32.Parse(diceTwo.Text), Int32.Parse(diceThree.Text), Int32.Parse(diceFour.Text), Int32.Parse(diceFive.Text) };
+            int sixes = 0;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                if (dice[i] == 6)
+                {
+                    sixes += 6;
+                }
+            }
+            txtSixes.Text = sixes.ToString();
         }
     }
 }
