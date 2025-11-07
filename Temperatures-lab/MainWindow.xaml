@@ -1,0 +1,74 @@
+﻿<Window
+    x:Class="Temperatures_lab.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Temperatures_lab"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Veckans temperaturer"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Margin="0,0,0,12"
+            FontSize="16"
+            FontWeight="Bold"
+            Text="Ange veckans temperaturer" />
+
+        <StackPanel
+            Grid.Row="1"
+            Margin="0,0,0,12"
+            Orientation="Horizontal">
+            <TextBlock
+                Margin="0,0,8,0"
+                VerticalAlignment="Center"
+                Text="Temperatur:" />
+            <TextBox
+                x:Name="txtTemp"
+                Width="100"
+                Height="28"
+                Margin="0,0,8,0"
+                FontSize="14" />
+            <Button
+                x:Name="btnAdd"
+                Width="100"
+                Height="30"
+                Click="OnAddClick"
+                Content="Lägg till" />
+        </StackPanel>
+
+        <ListBox
+            x:Name="lstTemps"
+            Grid.Row="2"
+            Height="200"
+            Margin="0,0,0,12"
+            FontSize="14" />
+
+        <Button
+            x:Name="btnCalc"
+            Grid.Row="3"
+            Width="160"
+            Height="34"
+            HorizontalAlignment="Left"
+            Click="OnCalcClick"
+            Content="Beräkna statistik" />
+
+        <TextBlock
+            x:Name="txtResult"
+            Grid.Row="4"
+            Margin="0,12,0,0"
+            FontSize="14"
+            FontWeight="SemiBold"
+            TextWrapping="Wrap" />
+    </Grid>
+</Window>

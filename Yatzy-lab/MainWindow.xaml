@@ -1,0 +1,396 @@
+﻿<Window
+    x:Class="Yatzy_lab.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Yatzy_lab"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="360" />
+            <ColumnDefinition Width="24" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Vänster: Poäng  -->
+        <Border
+            Grid.Column="0"
+            Padding="12"
+            Background="#FAFAFA"
+            BorderBrush="#DDD"
+            BorderThickness="1"
+            CornerRadius="8">
+            <Grid Grid.IsSharedSizeScope="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="16" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="24" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="lbl" />
+                    <ColumnDefinition Width="15" />
+                    <ColumnDefinition Width="100" SharedSizeGroup="box" />
+                </Grid.ColumnDefinitions>
+
+                <!--  Ettor  -->
+                <Button
+                    x:Name="btnOnes"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="OnOnesClick"
+                    Content="Ettor"
+                    Cursor="Hand"
+                    Focusable="False"
+                    FontSize="20"
+                    Foreground="#FF4E96" />
+                <TextBox
+                    x:Name="txtOnes"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Height="32"
+                    TextAlignment="Right" />
+
+                <!--  Tvåor  -->
+                <Button
+                    x:Name="btnTwos"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Padding="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="OnTwosClick"
+                    Content="Tvåor"
+                    Cursor="Hand"
+                    Focusable="False"
+                    FontSize="20"
+                    Foreground="#FF4E96" />
+                <TextBox
+                    x:Name="txtTwos"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Height="32"
+                    TextAlignment="Right" />
+
+                <!--  Treor  -->
+                <Button
+                    x:Name="btnThrees"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Padding="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="OnThreesClick"
+                    Content="Treor"
+                    Cursor="Hand"
+                    Focusable="False"
+                    FontSize="20"
+                    Foreground="#FF4E96" />
+                <TextBox
+                    x:Name="txtThrees"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Height="32"
+                    TextAlignment="Right" />
+
+                <!--  Fyror  -->
+                <Button
+                    x:Name="btnFours"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Padding="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="OnFoursClick"
+                    Content="Fyror"
+                    Cursor="Hand"
+                    Focusable="False"
+                    FontSize="20"
+                    Foreground="#FF4E96" />
+                <TextBox
+                    x:Name="txtFours"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Height="32"
+                    TextAlignment="Right" />
+
+                <!--  Femmor  -->
+                <Button
+                    x:Name="btnFives"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Padding="0,0,5,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="OnFivesClick"
+                    Content="Femmor"
+                    Cursor="Hand"
+                    Focusable="False"
+                    FontSize="20"
+                    Foreground="#FF4E96" />
+                <TextBox
+                    x:Name="txtFives"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Height="32"
+                    TextAlignment="Right" />
+
+                <!--  Sexor  -->
+                <Button
+                    x:Name="btnSixes"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Padding="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="OnSixesClick"
+                    Content="Sexor"
+                    Cursor="Hand"
+                    Focusable="False"
+                    FontSize="20"
+                    Foreground="#FF4E96" />
+                <TextBox
+                    x:Name="txtSixes"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Height="32"
+                    TextAlignment="Right" />
+
+                <!--  Bonus  -->
+                <TextBlock
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Foreground="#FF4E96"
+                    Text="Bonus" />
+                <TextBox
+                    x:Name="txtBonus"
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Height="32"
+                    FontSize="20"
+                    IsReadOnly="True"
+                    TextAlignment="Right" />
+
+                <!--  Total  -->
+                <TextBlock
+                    Grid.Row="8"
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Foreground="#FF4E96"
+                    Text="Total" />
+                <TextBox
+                    x:Name="txtTotal"
+                    Grid.Row="8"
+                    Grid.Column="1"
+                    Height="32"
+                    FontSize="20"
+                    IsReadOnly="True"
+                    TextAlignment="Right" />
+
+                <!--  Knappar  -->
+                <StackPanel
+                    Grid.Row="10"
+                    Grid.ColumnSpan="2"
+                    Margin="0,8,0,0"
+                    HorizontalAlignment="Left"
+                    Orientation="Horizontal">
+                    <Button
+                        x:Name="btnOk"
+                        Width="100"
+                        Height="32"
+                        Margin="0,0,8,0"
+                        Click="OnOkClick"
+                        Content="OK" />
+                    <Button
+                        x:Name="btnClear"
+                        Width="100"
+                        Height="32"
+                        Click="OnClearClick"
+                        Content="Rensa" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+
+        <!--  Höger: Tärningar  -->
+        <Border
+            Grid.Column="2"
+            Padding="16"
+            Background="#FAFAFA"
+            BorderBrush="#DDD"
+            BorderThickness="1"
+            CornerRadius="8">
+            <DockPanel>
+                <StackPanel
+                    Margin="0,0,0,12"
+                    DockPanel.Dock="Top"
+                    Orientation="Horizontal">
+                    <Button
+                        x:Name="btnRoll"
+                        Width="180"
+                        Height="40"
+                        Margin="0,0,8,0"
+                        Click="OnRollClick"
+                        Content="Kasta tärningar" />
+                    <TextBlock
+                        x:Name="txtRollsLeft"
+                        VerticalAlignment="Center"
+                        Text="Kast kvar: 3" />
+                </StackPanel>
+
+                <UniformGrid Columns="5" Rows="1">
+                    <!--  Die 1  -->
+                    <StackPanel Margin="6" VerticalAlignment="Top">
+                        <Border
+                            Width="50"
+                            Height="50"
+                            Background="White"
+                            BorderBrush="#CCC"
+                            BorderThickness="1"
+                            CornerRadius="10">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock
+                                    x:Name="diceOne"
+                                    VerticalAlignment="Center"
+                                    Text="X"
+                                    TextAlignment="Center" />
+                            </Viewbox>
+                        </Border>
+                        <CheckBox
+                            x:Name="chkDiceOne"
+                            Margin="0,6,0,0"
+                            HorizontalAlignment="Center"
+                            Content="Spara" />
+                    </StackPanel>
+
+                    <!--  Die 2  -->
+                    <StackPanel Margin="6" VerticalAlignment="Top">
+                        <Border
+                            Width="50"
+                            Height="50"
+                            Background="White"
+                            BorderBrush="#CCC"
+                            BorderThickness="1"
+                            CornerRadius="10">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock
+                                    x:Name="diceTwo"
+                                    VerticalAlignment="Center"
+                                    Text="X"
+                                    TextAlignment="Center" />
+                            </Viewbox>
+                        </Border>
+                        <CheckBox
+                            x:Name="chkDiceTwo"
+                            Margin="0,6,0,0"
+                            HorizontalAlignment="Center"
+                            Content="Spara" />
+                    </StackPanel>
+
+                    <!--  Die 3  -->
+                    <StackPanel Margin="6" VerticalAlignment="Top">
+                        <Border
+                            Width="50"
+                            Height="50"
+                            Background="White"
+                            BorderBrush="#CCC"
+                            BorderThickness="1"
+                            CornerRadius="10">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock
+                                    x:Name="diceThree"
+                                    VerticalAlignment="Center"
+                                    Text="X"
+                                    TextAlignment="Center" />
+                            </Viewbox>
+                        </Border>
+                        <CheckBox
+                            x:Name="chkDiceThree"
+                            Margin="0,6,0,0"
+                            HorizontalAlignment="Center"
+                            Content="Spara" />
+                    </StackPanel>
+
+                    <!--  Die 4  -->
+                    <StackPanel Margin="6" VerticalAlignment="Top">
+                        <Border
+                            Width="50"
+                            Height="50"
+                            Background="White"
+                            BorderBrush="#CCC"
+                            BorderThickness="1"
+                            CornerRadius="10">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock
+                                    x:Name="diceFour"
+                                    VerticalAlignment="Center"
+                                    Text="X"
+                                    TextAlignment="Center" />
+                            </Viewbox>
+                        </Border>
+                        <CheckBox
+                            x:Name="chkDiceFour"
+                            Margin="0,6,0,0"
+                            HorizontalAlignment="Center"
+                            Content="Spara" />
+                    </StackPanel>
+
+                    <!--  Die 5  -->
+                    <StackPanel Margin="6" VerticalAlignment="Top">
+                        <Border
+                            Width="50"
+                            Height="50"
+                            Background="White"
+                            BorderBrush="#CCC"
+                            BorderThickness="1"
+                            CornerRadius="10">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock
+                                    x:Name="diceFive"
+                                    VerticalAlignment="Center"
+                                    Text="X"
+                                    TextAlignment="Center" />
+                            </Viewbox>
+                        </Border>
+                        <CheckBox
+                            x:Name="chkDiceFive"
+                            Margin="0,6,0,0"
+                            HorizontalAlignment="Center"
+                            Content="Spara" />
+                    </StackPanel>
+                </UniformGrid>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>
