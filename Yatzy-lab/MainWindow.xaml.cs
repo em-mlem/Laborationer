@@ -46,7 +46,12 @@ namespace Yatzy_lab
 
         private void OnRollClick(object sender, RoutedEventArgs e)
         {
-            // https://w3schools.com/c/c_random_numbers.php
+            string[] dice = { "1", "2", "3", "4", "5", "6" };
+            diceOne.Text = (dice[0]);
+            diceTwo.Text = (dice[0]);
+            diceThree.Text = (dice[0]);
+            diceFour.Text = (dice[0]);
+            diceFive.Text = (dice[0]);
         }
 
         private void OnOnesClick(object sender, RoutedEventArgs e)
