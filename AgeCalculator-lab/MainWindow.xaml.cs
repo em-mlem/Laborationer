@@ -14,6 +14,12 @@ namespace AgeCalculator_lab
 
         private void OnCalculateClick(object sender, RoutedEventArgs e)
         {
+            int year, age;
+            year = int.Parse(txtAge.Text);
+            age = 2025 - year;
+            string message = $"Du är {age} år gammal";
+
+            lblResult.Content = message;
 
         }
     }
