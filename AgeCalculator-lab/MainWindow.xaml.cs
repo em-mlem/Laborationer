@@ -14,18 +14,22 @@ namespace AgeCalculator_lab
 
         private void OnCalculateClick(object sender, RoutedEventArgs e)
         {
-            int year, age;
+            int year, age, year2000, year1900;
             year = int.Parse(txtAge.Text); 
 
             if (year < 26)
             { age = 2025 - 2000 - year;
-                lblResult.Content = $"Du är {age} år gammal"; ;
+                lblResult.Content = $"Du är {age} år gammal";
+                year2000 = year + 2000;
+                txtAge.Text = year2000.ToString();
             }
             if (year > 25 && year <100)
             { age = 2025 - 1900 - year;
-                lblResult.Content = $"Du är {age} år gammal"; ;
+                lblResult.Content = $"Du är {age} år gammal";
+                year1900 = year + 1900;
+                txtAge.Text = year1900.ToString();
             }
-            if (year >100)
+            if (year >99)
             { age = 2025 - year;
                 if (age > 120)
                 { lblResult.Content = "Ursäkta, enligt våra beräkningar borde du vara död."; }
