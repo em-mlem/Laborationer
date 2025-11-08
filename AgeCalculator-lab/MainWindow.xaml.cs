@@ -7,13 +7,37 @@ namespace AgeCalculator_lab
     /// </summary>
     public partial class MainWindow : Window
     {
+        //https://learn.microsoft.com/en-us/dotnet/api/system.char.isdigit?view=net-9.0
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        private bool IsValidNumber(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return false;
+
+            foreach (char c in input)
+            {
+                if (!char.IsDigit(c))
+                    return false;
+            }
+
+            return true;
+        }
+
         private void OnCalculateClick(object sender, RoutedEventArgs e)
         {
+            string input = txtAge.Text;
+
+            if (!IsValidNumber(input))
+            {
+                MessageBox.Show("Du måste ange ett giltigt årtal (endast siffror).");
+                return;
+            }
+
             int year, age, year2000, year1900;
             year = int.Parse(txtAge.Text); 
 
