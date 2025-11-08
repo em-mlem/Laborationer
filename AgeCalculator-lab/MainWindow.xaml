@@ -28,7 +28,7 @@
                 Content="Beräkna ålder" />
             <Label
                 x:Name="lblResult"
-                Width="350"
+                Width="751"
                 Height="100"
                 HorizontalAlignment="Left"
                 Content="Här visar du resultatet"

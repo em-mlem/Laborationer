@@ -19,7 +19,10 @@ namespace AgeCalculator_lab
             age = 2025 - year;
             string message = $"Du är {age} år gammal";
 
-            lblResult.Content = message;
+            if (age > 120)
+            { lblResult.Content = "Ursäkta, enligt våra beräkningar borde du vara död."; }
+            else
+            { lblResult.Content = message; }
 
         }
     }
