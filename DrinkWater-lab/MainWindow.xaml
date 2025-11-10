@@ -26,6 +26,7 @@
                 Margin="5"
                 HorizontalAlignment="Left"
                 Content="Beräkna" Click="OnButtonCalculateClick" />
+            <Button x:Name="btnAnalyze" Content="Analysera Sportdrycksinnehåll" Click="btnAnalyze_Click"/>
         </StackPanel>
 
     </Grid>

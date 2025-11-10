@@ -26,6 +26,22 @@ namespace DrinkWater_lab
                 MessageBox.Show("Felaktig inmatning. Skriv in ett giltigt tal för antal timmar.");
             }
         }
+
+        private void btnAnalyze_Click(object sender, RoutedEventArgs e)
+        {
+            string formula = "C6H12O6H20";
+            int hydrogenCount = 0;
+
+            for (int i = 0; i < formula.Length; i++)
+            {
+                if (formula[i] == 'H')
+                {
+                    hydrogenCount++;
+                }
+            }
+
+            MessageBox.Show($"Formeln {formula} innehåller {hydrogenCount} väteatomer (H).");
+        }
     }
 }
 //källor
