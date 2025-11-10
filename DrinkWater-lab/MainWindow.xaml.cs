@@ -17,9 +17,9 @@ namespace DrinkWater_lab
             if (double.TryParse(txtHours.Text, out double hours))
             {
                 double liters = hours * 0.5;
-                int roundedLiters = (int)Math.Floor(liters);
+                int wholeBottles = (int)Math.Ceiling(liters);
 
-                MessageBox.Show($"Du bör dricka {roundedLiters} liter vatten.");
+                MessageBox.Show($"Du bör dricka {wholeBottles} flaskor vatten.");
             }
             else
             {
