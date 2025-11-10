@@ -14,7 +14,16 @@ namespace AverageLength_lab
 
         private void OnValidateClick(object sender, RoutedEventArgs e)
         {
+            var analyzer = new SentenceAnalyzer();
 
+            string sentence = txtSentence.Text;
+            string feedback = analyzer.GetFeedback(sentence);
+
+            MessageBox.Show(feedback);
         }
     }
 }
+
+//källor
+// https://learn.microsoft.com/en-us/dotnet/api/system.char.isletter?view=net-9.0
+// https://learn.microsoft.com/en-us/dotnet/api/system.math.round?view=net-9.0
