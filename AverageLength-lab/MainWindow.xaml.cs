@@ -17,9 +17,29 @@ namespace AverageLength_lab
             var analyzer = new SentenceAnalyzer();
 
             string sentence = txtSentence.Text;
-            string feedback = analyzer.GetFeedback(sentence);
+            analyzer.CalculateAverageWordLength(sentence);
 
-            MessageBox.Show(feedback);
+            double average = analyzer.AverageWordLength;
+
+            if (analyzer.Words == 0)
+            {
+                MessageBox.Show("Det finns ingen text att analysera.");
+            }
+
+            if(average >= 3.5 && average <= 4.4)
+            {
+                MessageBox.Show($"Medellängd: {average}. Du är en sann medelmåtta!");
+            }
+
+            else if (average < 3.5)
+            {
+                MessageBox.Show($"Medellängd: {average}. Dina ord är för korta.");
+            }
+
+            else
+            {
+                MessageBox.Show($"Medellängd: {average}. Dina ord är för långa.");
+            }
         }
     }
 }
@@ -27,3 +47,4 @@ namespace AverageLength_lab
 //källor
 // https://learn.microsoft.com/en-us/dotnet/api/system.char.isletter?view=net-9.0
 // https://learn.microsoft.com/en-us/dotnet/api/system.math.round?view=net-9.0
+// https://www.w3resource.com/csharp-exercises/conditional-statement/index.php
