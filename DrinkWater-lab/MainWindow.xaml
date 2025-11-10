@@ -27,6 +27,7 @@
                 HorizontalAlignment="Left"
                 Content="Beräkna" Click="OnButtonCalculateClick" />
             <Button x:Name="btnAnalyze" Content="Analysera Sportdrycksinnehåll" Click="btnAnalyze_Click"/>
+            <TextBox x:Name="txtHydrogen" Height="27" TextWrapping="Wrap" Text="" Width="112"/>
         </StackPanel>
 
     </Grid>

@@ -29,14 +29,35 @@ namespace DrinkWater_lab
 
         private void btnAnalyze_Click(object sender, RoutedEventArgs e)
         {
-            string formula = "C6H12O6H20";
+            string formula = txtHydrogen.Text.Trim();
             int hydrogenCount = 0;
 
             for (int i = 0; i < formula.Length; i++)
             {
-                if (formula[i] == 'H')
+                char c = formula[i];
+
+                if (c == 'H')
                 {
-                    hydrogenCount++;
+                    int count = 1;
+
+                    if(i + 1 < formula.Length && char.IsDigit(formula[i+1]))
+                    {
+                        string numberText = "";
+                        int j = i + 1;
+
+                        while(j < formula.Length && char.IsDigit(formula[j]))
+                        {
+                            numberText += formula[j];
+                            j++;
+                        }
+
+                        if (int.TryParse(numberText, out int number))
+                        {
+                            count = number;
+                        }
+                        i = j - 1;
+                    }
+                    hydrogenCount += count;
                 }
             }
 
@@ -46,3 +67,4 @@ namespace DrinkWater_lab
 }
 //källor
 //https://learn.microsoft.com/en-us/dotnet/api/system.math.floor
+// https://www.codecademy.com/resources/docs/c-sharp/loops
