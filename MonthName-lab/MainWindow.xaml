@@ -13,7 +13,7 @@
     Orientation="Vertical">
             <Label Content="Månad som nummer" />
             <TextBox
-        x:Name="txMonthNumber"
+        x:Name="txtMonthNumber"
         Width="150"
         Margin="5"
         Padding="5"
