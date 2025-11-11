@@ -60,7 +60,7 @@ namespace DrinkWater_lab
                     hydrogenCount += count;
                 }
             }
-
+            
             MessageBox.Show($"Formeln {formula} innehåller {hydrogenCount} väteatomer (H).");
         }
     }
