@@ -116,6 +116,9 @@
                   Height="36"
                   Click="OnClearClick"
                   Content="Rensa" />
+                <Button Content="Simulera tills 7 rätt"
+                        Click="OnSimulateClick"
+                        Width="115" />
             </StackPanel>
 
             <!--  Resultat  -->
