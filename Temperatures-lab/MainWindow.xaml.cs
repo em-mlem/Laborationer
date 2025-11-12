@@ -10,6 +10,7 @@ namespace Temperatures_lab
     {
         private readonly double[] _temps = new double[7];
         private int _count = 0;
+        private readonly string[] _days = { "måndag", "tisdag", "onsdag", "torsdag", "fredag", "lördag", "söndag" };
 
         public MainWindow()
         {
@@ -26,7 +27,7 @@ namespace Temperatures_lab
                 return;
             }
 
-            string input = txtTemp.Text.Trim().Replace('.', ',');
+            string input = (txtTemp.Text ?? string.Empty).Trim().Replace('.', ',');
             double temp = double.Parse(input, CultureInfo.CurrentCulture);
 
             _temps[_count] = temp;
@@ -58,19 +59,38 @@ namespace Temperatures_lab
             double sum = 0;
             double min = _temps[0];
             double max = _temps[0];
+            int minIndex = 0;
+            int maxIndex = 0;
 
             for (int i = 0; i < _temps.Length; i++)
             {
                 double t = _temps[i];
                 sum += t;
-                if (t < min) min = t;
-                if (t > max) max = t;
+
+                if (t < min) { min = t; minIndex = i; }
+                if (t > max) { max = t; maxIndex = i; }
             }
 
             double avg = Math.Round(sum / _temps.Length, 2);
 
-            txtResult.Text = $"Medel: {avg} °C   Högsta: {max} °C   Lägsta: {min} °C";
+            lstTemps.Items.Clear();
+            for (int i = 0; i < _temps.Length; i++)
+            {
+                string day = _days[i];
+                day = char.ToUpper(day[0]) + day.Substring(1);
+                lstTemps.Items.Add($"{day}: {_temps[i]} °C");
+            }
+
+            string maxDay = char.ToUpper(_days[maxIndex][0]) + _days[maxIndex].Substring(1);
+            string minDay = char.ToUpper(_days[minIndex][0]) + _days[minIndex].Substring(1);
+
+            txtResult.Text = $"Medel: {avg} °C   Högsta: {max} °C ({maxDay})   Lägsta: {min} °C ({minDay})";
         }
 
     }
 }
+
+//källor
+// https://learn.microsoft.com/en-us/dotnet/api/system.char.toupper?view=net-9.0
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/arrays#accessing-array-elements
+// https://learn.microsoft.com/en-us/dotnet/api/system.double.parse?view=net-9.0
